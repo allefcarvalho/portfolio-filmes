@@ -122,17 +122,15 @@
     transition: 1s;
   }
   
-  .btn-conteudo:hover,
-  .btn-conteudo--curtir:hover {
-    color: var(--red-black);
-  }
-  
   .btn:hover,
   .btn:hover .btn-icone {
     color: var(--red);
   }
-  
-  .btn--icone-curtir,
-  .btn-conteudo {
+
+  .btn-active {
+    color: var(--red);
+  }
+
+  .btn-disable {
     color: var(--gray);
   }

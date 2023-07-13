@@ -8,7 +8,7 @@ import { MovieService } from 'src/app/services/movie/movie.service';
   styleUrls: ['./cards.component.scss']
 })
 export class CardsComponent {
-  
+  status = true;
   movie?: Movie[];
   constructor(private movieService: MovieService) { }
 
@@ -19,7 +19,6 @@ export class CardsComponent {
         {
           next: (item) => {
             this.movie = item.results
-            console.log(this.movie)
           },
           error: (erro) => {
             console.log(erro)
@@ -27,6 +26,13 @@ export class CardsComponent {
         }
       );
 
+  }
+
+  setLikes(movie: Movie): void {
+    movie.like = true;
+    const index = this.movie?.findIndex((movieItem) => movieItem.id == movie.id);
+    this.movie?.includes(movie, index);
+    this.movieService.registerLikes(movie);
   }
 
 }

@@ -22,7 +22,6 @@ import { CardsComponent } from './components/cards/cards.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
