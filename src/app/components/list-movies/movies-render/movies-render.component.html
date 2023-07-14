@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  
+<div class="content" role="main">
+    <h1>TOP 10 - Filmes mais populares no Brasil</h1>
+    <button class="btn-movies" routerLink="/list">
+        <span>Filmes + Curtidos</span>
+    </button>
+
+    <div class="card-container">
+        <a class="card" target="_blank" rel="noopener" *ngFor="let item of movie | slice:0:10 ; index as i">
+            <img class="img-card" [src]="'https://image.tmdb.org/t/p/w500'+item.poster_path">
+            <div class="information">
+                <button class="btn btn-curtir" (click)="setLikes(item)">
+                    <span
+                        [ngClass]="item.like ? 'btn-icone btn--icone-curtir btn-active' : 'btn-icone btn--icone-curtir btn-disable'">
+                        <span class="fa fa-heart"></span>
+                    </span>
+                    <span class="btn-conteudo btn-conteudo--curtir">Curtir</span>
+                </button>
+            </div>
+        </a>
+    </div>
+</div>

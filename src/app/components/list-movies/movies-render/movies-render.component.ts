@@ -3,12 +3,11 @@ import { Movie } from 'src/app/Movie';
 import { MovieService } from 'src/app/services/movie/movie.service';
 
 @Component({
-  selector: 'app-cards',
-  templateUrl: './cards.component.html',
-  styleUrls: ['./cards.component.scss']
+  selector: 'app-movies-render',
+  templateUrl: './movies-render.component.html',
+  styleUrls: ['./movies-render.component.scss']
 })
-export class CardsComponent {
-  status = true;
+export class MoviesRenderComponent {
   movie?: Movie[];
   constructor(private movieService: MovieService) { }
 
@@ -34,5 +33,4 @@ export class CardsComponent {
     this.movie?.includes(movie, index);
     this.movieService.registerLikes(movie);
   }
-
 }
