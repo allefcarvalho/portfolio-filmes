@@ -16,16 +16,24 @@ export class ListRenderComponent {
   ) { }
 
   ngOnInit(): void {
-    this.login();
-    this.movieService
-      .getListLikedMovies()
+    const response = this.getListMovies();
+    if (response != 200) {
+      this.login();
+      this.getListMovies();
+    }
+  }
+
+  getListMovies(): any {
+    this.movieService.getListLikedMovies()
       .subscribe(
         {
           next: (item) => {
             this.movie = item
+            return 200
           },
           error: (erro) => {
             console.log(erro)
+            return erro.status
           }
         }
       );
