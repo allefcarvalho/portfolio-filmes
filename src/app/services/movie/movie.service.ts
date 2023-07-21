@@ -35,10 +35,4 @@ export class MovieService {
     this.http.post<any>(`${NEST_API}/movies/addlikes`, movie, { headers })
       .subscribe();
   }
-
-  getToken() {
-    return this.authService.login('Admin', 'admin');
-  }
-
-
 }
