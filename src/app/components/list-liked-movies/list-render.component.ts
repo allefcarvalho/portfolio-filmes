@@ -9,7 +9,7 @@ import { MovieService } from 'src/app/services/movie/movie.service';
   styleUrls: ['./list-render.component.scss']
 })
 export class ListRenderComponent {
-  movie?: Movie[];
+  movies?: Movie[];
   constructor(
     private movieService: MovieService,
     private authService: AuthService
@@ -27,8 +27,8 @@ export class ListRenderComponent {
     this.movieService.getListLikedMovies()
       .subscribe(
         {
-          next: (item) => {
-            this.movie = item
+          next: (items) => {
+            this.movies = items
             return 200
           },
           error: (erro) => {

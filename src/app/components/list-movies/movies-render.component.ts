@@ -8,7 +8,7 @@ import { MovieService } from 'src/app/services/movie/movie.service';
   styleUrls: ['./movies-render.component.scss']
 })
 export class MoviesRenderComponent {
-  movie?: Movie[];
+  movies?: Movie[];
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
@@ -17,7 +17,7 @@ export class MoviesRenderComponent {
       .subscribe(
         {
           next: (item) => {
-            this.movie = item.results
+            this.movies = item.results
           },
           error: (erro) => {
             console.log(erro)
@@ -29,8 +29,8 @@ export class MoviesRenderComponent {
 
   setLikes(movie: Movie): void {
     movie.like = true;
-    const index = this.movie?.findIndex((movieItem) => movieItem.id == movie.id);
-    this.movie?.includes(movie, index);
+    const index = this.movies?.findIndex((movieItem) => movieItem.id == movie.id);
+    this.movies?.includes(movie, index);
     this.movieService.registerLikes(movie);
   }
 }

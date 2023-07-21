@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ListRenderComponent } from './components/list-liked-movies/list-render/list-render.component';
-import { MoviesRenderComponent } from './components/list-movies/movies-render/movies-render.component';
+import { ListRenderComponent } from './components/list-liked-movies/list-render.component';
+import { MoviesRenderComponent } from './components/list-movies/movies-render.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MoviesRenderComponent } from './components/list-movies/movies-render/mo
     ToolbarComponent,
     FooterComponent,
     ListRenderComponent,
-    MoviesRenderComponent
+    MoviesRenderComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
